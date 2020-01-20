@@ -1,0 +1,611 @@
+Html Webpack Plugin:
+<pre>
+  Error: Parse Error: <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li class="animated fadeInUp tobuild">Code minification</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Code minification</h2>
+  <ul>
+  <li class="animated fadeInUp tobuild">remove whitespace</li>
+  <li class="animated fadeInUp tobuild">remove functions that are never executed</li>
+  <li class="animated fadeInUp tobuild">change functions' and variables' names to shorter ones</li>
+  <li class="animated fadeInUp tobuild">uglifyJS, minifyCSS........</li>
+  </ul>
+  <p class="animated fadeInUp tobuild">...but</p>
+  <h2 class="animated fadeInUp tobuild">FORGET ABOUT IT </h2>
+  <p class="animated fadeInUp tobuild">we have angular and we have <code>ng build --prod</code></p>
+  <a href="https://github.com/angular/angular-cli/tree/master/packages/angular_devkit/build_optimizer" class="animated fadeInUp tobuild">https:://github.com/angular/angular-cli/tree/master/packages/an  gular_devkit/build_optimizer</a>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li class="animated fadeInUp tobuild">OnPush Change Detection</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue fullscreen" "="">
+  <div class="wrap" wrap="true">
+  <img class="aligncenter" src="https://previews.dropbox.com/p/thumb/AArqEgV96DATTDfhoOfQjPTnuhrkuYttjTySALhxAorlABoKC9GVMUaj-obu6oMIQmmeluQGXthjyXjtVKwtybjYjDuCdpEWVvewk03QZUAwA4MtUAPgv17EJ-X7I33BBGL  -xRlqd7TD-Ko4ZNFgCxdpnSRCfZ7YdFm1FXtmfexKdJuMexhMcmKK3ECCIc6Ypitfz8H9DfFbQXi8ZQQhnOHAJmQ_bpUgH0v6OBh4xTq_czGL9lqu8mnVsLUcfaBo1Ng4utI9qEHc-8tn2UdptORhIERzlpnEkJHU2HRwnclqaw9lPzXobCvJsxIBe7aEEj3o3V8MB  sZJ5dT9q0-5Aeh-/p.png?fv_content=true&size_mode=5">
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue fullscreen" "="">
+  <div class="wrap" wrap="true">
+  <img class="aligncenter" src="https://previews.dropbox.com/p/thumb/AArkXLST9x8nE08PPPrym0VfZD-tCMOu1c8T60yDh1EkCe8UfwqYHrWp40FjxtoILWn7Y9fclYINulB34q9rI5Beu0f88tXL5i6oybhALGNo7oc5FC6iX8F0w_V-lLr_jio  L6sQp51t3PIqgMLdj07r7BwOvM7fvUBueK7vV8ZSh0dla--XUeFfszGHg9VE3nSdcP86Ar5GbpGiPgYFyUQF_4bVL82OOkbTQk9WzuwoWkdRQngtRGUPDUHS8rgh72cD_UKKd9Zjqn2T8UBnyDw4W0H75yXawgBXA6FhhVT0GSCl2KVY2vwfVZ6UQ03fSyPgUql75W  y2vBdJWDrXj1Wgk/p.png?fv_content=true&size_mode=5">
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue fullscreen" "="">
+  <div class="wrap" wrap="true">
+  <img class="aligncenter" src="https://previews.dropbox.com/p/thumb/AApy2SEFdsWGoqNlLefCgqg2x2MSAON1MsryjQ_JGPMfHWzCpV62HrKlS38DU3rkEvCZGOPvhJWTYWgqZeIbEw9tvZ3coA71OxK49P4ge7iNcEwU_Iw8F01Yc6HUXQ1KbMI  -zuyHMqtLe8t8Pt8litMaOuYs7X_OY_EKDAu4zmhs4KRcFkwes_3J7alYaXAlQ4YOhU6wpc4q07yoX2OGsA-JVKa_cmBfyWS7D8pk4ROfbJi7m-wFCBB0EoF_rvrtmt810F1VGLiA4oPDrWtM5ZcrVinZBCNx71ZyVnJPTvd8Tk6SoY4o6f-LZtEmGgcMJwDBiZwnH  fI2NQUbTbwGZbTU/p.png?fv_content=true&size_mode=5">
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <p>@Component({<br>
+  ...<br>
+  changeDetection:: ChangeDetectionStrategy.OnPush<br>
+  })<br>
+  export class Component {<br>
+  @Input() name;<br>
+  }</p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>OnPush works by comparing references of the inputs of the component</h2>
+  <p><br>
+  <div class="tobuild">
+  <p>{{ name }}</p>
+  </div>
+  <br><br>
+  <div class="tobuild">
+  changeName():: void {<br>
+  this.name = 'Andrzej';<br>
+  }
+  </div></p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue fullscreen" "="">
+  <div class="wrap" wrap="true">
+  <img class="aligncenter" src="https://previews.dropbox.com/p/thumb/AArpF9vqSdGVEhuF1df7BDS4DW8w8KbuXNQcv8EEHlaV2J_AdNvNRTy49Sb0VqbJClU3AXfo6GDmCIIVPeuJR6IFaqszOREsn34Ah2n59If_lZZZgNlGaqFzyZ7YTY6SNz8  cwJi2M1dfMkayeCQswNJpequMsVddnfh7v2b4E2aneWe8kWcS2pusYNTz77CqN0y45hkZy1Yr7AyTZfB5bRbr8W8HRyHd3GfHjZDswsdHTcaGeoXUkaicV4_eV4l73Ck2oLCZ5pOcj_RJFDJaoDERX-wRnxfRoXt9zLAUMuN8s0SXGQOa29DCDrC8XPwKM9GxVSLTs  Y8tKnIacK3ZCTtC/p.png?fv_content=true&size_mode=5">
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue fullscreen" "="">
+  <div class="wrap" wrap="true">
+  <img class="aligncenter" src="https://previews.dropbox.com/p/thumb/AArd697RqPkylvs4-3XViXORYkiZm_1WKS8JbHLoRhkihl0uIv0YPQh2dwfNdaGVNAeSymDsdRVrf3mEdBrqMm51NxStnzNlQ8O6fb9Xxcr_cZO3tVB-o7eQSYhOqdWKiGL  aAjIGjU5wsEu1TqJTtYW05jVgfRos3Mo30NVbWpvgsY36OfwEtDvKtgfPH3Mb-zVVkvx1w7OQqMVbofCDgsTMEyFO74Yvp0h6qnLVJmDITOzgC7HrmVAlxuUN_3zrOSKfDnWBUy75fQP56FAb68wOCUfWFSN42-YG_wVrr_CEmtTxw9ffx6db3-v6l7xv0SVZiXUw0  BiC3NzxHJDlqRZN/p.png?fv_content=true&size_mode=5">
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Change detector for component with OnPush Strategy will be trigger only when...</h2>
+  <p class="animated fadeInUp tobuild">... value in @Input() has been changed</p>
+  <p class="animated fadeInUp tobuild">... an event has been emitted by template</p>
+  <p class="animated fadeInUp tobuild">... an event has been triggered by Observable in this component</p>
+  <p class="animated fadeInUp tobuild">... <code>this.changeDetector.markForCheck()</code> has been called</p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue fullscreen" "="">
+  <div class="wrap" wrap="true">
+  <img class="aligncenter" src="https://previews.dropbox.com/p/thumb/AAod2Q-wHb8oZC5IGiQQbhRXoS3XBpjI4IB349_7l2N9CCqeE8ml-0K9be2O6Znn735a3ShNBFFANELjLGsvWfLZEwWWDgkJ7bapBzA_UNnoqFCdFX6J-lypHodSz7kpfip  hlL2Cc9fRLo8Cxe7qEnE2EQC7WcUd2UHGl0v02quCTkqktqEhB4iFPXh4xBpbI25WLjuZIZXGwFDSfqTwR1sPmfFc8-ZS-_JChozDKMx_Rg0Be9rsqDByVAE3lEVn8x91LqdqhVH_EwK_U3OKIhSv63QcVnG-TQgjjQg3EdUl6am4apxQMaKnZE6vjDleRhoYn9585  fw4TGhqoCF3vjGG/p.png?fv_content=true&size_mode=5">
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li class="animated fadeInUp tobuild">Pure pipes instead of functions/getters in templates</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Pure pipes</h2>
+  <p><br>
+  <br>
+  class foo {<br>
+  private _bar:: boolean = false;<br>
+  get bar():: boolean {<br>
+  return this._bar;<br>
+  }<br>
+  }
+  <br>
+  <br>
+  <code>get</code> used in the view is nothing more than a function call.<br>
+  Pure pipes will always return the same output, no matter how many times they will receive the same input. <br>
+  If the change detector reaches this view and <code>pure</code> in the pipe is set to <code>true</code>, <br>
+  the change detector will not check if that value has been changed because it knows that it will return exactly the same value.</p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li class="animated fadeInUp tobuild">async pipe</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>async pipe</h2>
+  <p>The async pipe allows for subscribe to Observable directly from the template.<br>
+  With async pipe, there's no need to care about unsubscribing,<br>
+  moreover Change Detector will check if the value has been changed only when Observable changed itself.</p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li class="animated fadeInUp tobuild">Unsubscribe</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Unsubscribe (1st method)</h2>
+  <p>let sub1:: Subscription;<br>
+  let sub2:: Subscription;<br></p>
+  <p>ngOnInit() {<br>
+  this.sub1 = this.service.Subject1.subscribe(() =&gt; {});<br>
+  this.sub2 = this.service.Subject2.subscribe(() =&gt; {});<br>
+  }<br></p>
+  <p>ngOnDestroy() {<br>
+  if (this.sub1) {<br>
+  this.sub1.unsubscribe();<br>
+  }<br>
+  if (this.sub2) {<br>
+  this.sub2.unsubscribe();<br>
+  }<br>
+  }<br></p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Unsubscribe (2nd method)</h2>
+  <p>let subs:: Subscription[] = [];<br></p>
+  <p>ngOnInit() {<br>
+  this.subs.push(this.service.Subject1.subscribe(() =&gt; {}));<br>
+  this.subs.push(this.service.Subject2.subscribe(() =&gt; {}));<br>
+  }</p>
+  <p>ngOnDestroy() {<br>
+  subs.forEach(sub =&gt; sub.unsubscribe());<br>
+  }</p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Unsubscribe (3rd method)</h2>
+  <p>private subscriptions = new Subscription();<br></p>
+  <p>ngOnInit() {<br>
+  this.subscriptions.add(this.service.Subject1.subscribe(() =&gt; {}));<br>
+  this.subscriptions.add(this.service.Subject2.subscribe(() =&gt; {}));<br>
+  }<br></p>
+  <p>ngOnDestroy() {<br>
+  this.subscriptions.unsubscribe();<br>
+  }</p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Unsubscribe (4th method)</h2>
+  <p>ngUnsubscribe = new Subject<void>();<br></void></p>
+  <p>ngOnInit() {<br>
+  this.service.Subject1.pipe(takeUntil(this.ngUnsubscribe))<br>
+  .subscribe(() =&gt; {});<br>
+  this.service.Subject2.pipe(takeUntil(this.ngUnsubscribe))<br>
+  .subscribe(() =&gt; {});<br>
+  }<br></p>
+  <p>ngOnDestroy():: void {<br>
+  this.ngUnsubscribe.next();<br>
+  this.ngUnsubscribe.complete();<br>
+  }</p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li>Unsubscribe</li>
+  <li class="animated fadeInUp tobuild">Track By function</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2><code>Track by</code> function</h2>
+  <p><br><br>
+  *ngFor=&quot;let document of documents; trackBy:: trackByFn&quot;</p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li>Unsubscribe</li>
+  <li>Track By function</li>
+  <li class="animated fadeInUp tobuild">Webpack Bundle Analyzer</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue fullscreen" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2 class="aligncenter">Webpack Bundle Analyzer </h2>
+  <img class="aligncenter" src="https://cloud.githubusercontent.com/assets/302213/20628702/93f72404-b338-11e6-92d4-9a365550a701.gif">
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li>Unsubscribe</li>
+  <li>Track By function</li>
+  <li>Webpack Bundle Analyzer</li>
+  <li class="animated fadeInUp tobuild">You (might) not need</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>You (might) not need</h2>
+  <a target="_blank" href="https://youmightnotneed.com/">https:://youmightnotneed.com/</a>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li>Unsubscribe</li>
+  <li>Track By function</li>
+  <li>Webpack Bundle Analyzer</li>
+  <li>You (might) not need</li>
+  <li class="animated fadeInUp tobuild">import *</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>import *</h2>
+  <p>import { chunk } from “lodash”<br>
+  vs.<br>
+  import * from “lodash”</p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li>Unsubscribe</li>
+  <li>Track By function</li>
+  <li>Webpack Bundle Analyzer</li>
+  <li>You (might) not need</li>
+  <li>import *</li>
+  <li class="animated fadeInUp tobuild">Global scss files vs. styles per component</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Styles per component</h2>
+  <ol>
+  <li class="animated fadeInUp tobuild">Properties will be loaded only if the component is used in the rendered page = <span style="color: green">better performance</span></li>
+  <li class="animated fadeInUp tobuild">The SCSS is scoped and simplified = <span style="color: green">better productivity</span></li>
+  <li class="animated fadeInUp tobuild">Styles per component overwrites global styles</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li>Unsubscribe</li>
+  <li>Track By function</li>
+  <li>Webpack Bundle Analyzer</li>
+  <li>You (might) not need</li>
+  <li>import *</li>
+  <li>Global scss files vs. styles per component</li>
+  <li class="animated fadeInUp tobuild">Dead-code elimination/Tree shaking</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Dead-code elimination/Tree shaking</h2>
+  <p class="tobuild">
+  When using<br>
+  <code>ng build --prod</code><br>
+  to build, the angular CLI will compile and bundle all components into the application.<br><br>
+  </p>
+  <p class="tobuild">
+  When using<br>
+  <code>ng build --prod --build-optimizer</code><br>
+  to build, all of the unused components will be omitted.<br>
+  <code>--build-optimizer</code> evokes tree shaking (term commonly used in the JavaScript context for dead-code elimination) on Webpack.<br><br>
+  </p>
+  <p class="tobuild">Unfortunately, this can cause some bugs.</p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Dead-code elimination/Tree shaking</h2>
+  <p><br></p>
+  <h4 class="aligncenter">Rather than excluding <span style="color: saddlebrown">dead code</span> <i style="color: saddlebrown" class="fa fa-leaf"></i><br> </h4>
+  <h4 class="aligncenter">we should including <strong style="color: green">live code</strong> <i style="color: green" class="fa fa-leaf"></i> </h4>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li>Unsubscribe</li>
+  <li>Track By function</li>
+  <li>Webpack Bundle Analyzer</li>
+  <li>You (might) not need</li>
+  <li>import *</li>
+  <li>Global scss files vs. styles per component</li>
+  <li>Dead-code elimination/Tree shaking</li>
+  <li class="animated fadeInUp tobuild">One-time string initialization</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>One-time string initialization</h2>
+  <p><br><br>
+  <code>[label]=&quot;'Save'&quot;</code> vs <code>label=&quot;Save&quot;</code>
+  <br><br>
+  <blockquote class="text-quote tobuild">
+  <p>
+  You should omit the brackets when all of the following are true::
+  <ul>
+  <li>The target property accepts a string value.</li>
+  <li>The string is a fixed value that you can put directly into the template.</li>
+  <li>This initial value never changes.</li>
+  </ul>
+  <cite><a href="https://angular.io/guide/template-syntax">angular.io</a></cite>
+  </p>
+  </blockquote></p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li>Unsubscribe</li>
+  <li>Track By function</li>
+  <li>Webpack Bundle Analyzer</li>
+  <li>You (might) not need</li>
+  <li>import *</li>
+  <li>Global scss files vs. styles per component</li>
+  <li>Dead-code elimination/Tree shaking</li>
+  <li>One-time string initialization</li>
+  <li class="animated fadeInUp tobuild">Dependencies between components</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Dependencies between components</h2>
+  <h5>NGD:: Angular Dependencies Graph</h5>
+  <a href="https://raw.githubusercontent.com/compodoc/ngd/master/screenshots/dependencies-4.png" target="_blank">
+  <img class="aligncenter" src="https://raw.githubusercontent.com/compodoc/ngd/master/screenshots/dependencies-4.png">
+  </a>
+  <a href="https://camo.githubusercontent.com/9f1ae19a23609ef67f684a9e792d774232d5b471/68747470733a2f2f63646e2e7261776769742e636f6d2f636f6d706f646f632f6e67642f6d61737465722f73637265656e73686f74732f646  570656e64656e636965732e6d6174657269616c322e737667" target="_blank">
+  <img class="aligncenter" src="https://camo.githubusercontent.com/9f1ae19a23609ef67f684a9e792d774232d5b471/68747470733a2f2f63646e2e7261776769742e636f6d2f636f6d706f646f632f6e67642f6d61737465722f736372  65656e73686f74732f646570656e64656e636965732e6d6174657269616c322e737667">
+  </a>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li>Unsubscribe</li>
+  <li>Track By function</li>
+  <li>Webpack Bundle Analyzer</li>
+  <li>You (might) not need</li>
+  <li>import *</li>
+  <li>Global scss files vs. styles per component</li>
+  <li>Dead-code elimination/Tree shaking</li>
+  <li>One-time string initialization</li>
+  <li>Dependencies between components</li>
+  <li class="animated fadeInUp tobuild">CSS vs. JS animations</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>CSS vs. JS animations</h2>
+  <p class="text-cols">
+  <span class="tobuild">
+  CSS animations are ideal for smaller, self-contained states for UI elements,
+  e.g. a sidebar with menu appearing from the side, a tooltip showing on hover.
+  </span>
+  <br><br>
+  <span class="tobuild">
+  JavaScript gives more control over animations,
+  e.g. possibility to stop, slow down, reverse or pause the animation.
+  </span>
+  </p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li>Unsubscribe</li>
+  <li>Track By function</li>
+  <li>Webpack Bundle Analyzer</li>
+  <li>You (might) not need</li>
+  <li>import *</li>
+  <li>Global scss files vs. styles per component</li>
+  <li>Dead-code elimination/Tree shaking</li>
+  <li>One-time string initialization</li>
+  <li>Dependencies between components</li>
+  <li>CSS vs. JS animations</li>
+  <li class="animated fadeInUp tobuild">Lazy loading</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Lazy loading</h2>
+  <p>Lazy loading loads only those modules and components that are needed. <br><br>
+  If the user is not an admin, there is no need to load the entire AdminModule. <br><br>
+  If the user is not signed in into the application and uses it only as an anonymous user, there is no need to load the AccountModule, which allows for view and edit the profile.</p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>Lazy loading</h2>
+  <p class="text-cols">
+  <span class="tobuild">
+  const routes:: Routes = [<br>
+  {<br>
+  path:: '',<br>
+  component:: HomeComponent<br>
+  },<br>
+  {<br>
+  path:: 'login',<br>
+  component:: LoginComponent<br>
+  }<br>
+  ];
+  </span>
+  <br><br>
+  <span class="tobuild">
+  const routes:: Routes = [<br>
+  {<br>
+  path:: '',<br>
+  component:: HomeComponent<br>
+  },<br>
+  {<br>
+  path:: 'login',<br>
+  loadChildren:: './login/login.module#LoginModule' <br>
+  }<br>
+  ];
+  </span>
+  </p>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>What can we do?</h2>
+  <ol>
+  <li>Code Minification</li>
+  <li>OnPush Change Detection</li>
+  <li>Pure pipes instead of functions/getters in templates</li>
+  <li>async pipe</li>
+  <li>Unsubscribe</li>
+  <li>Track By function</li>
+  <li>Webpack Bundle Analyzer</li>
+  <li>You (might) not need</li>
+  <li>import *</li>
+  <li>Global scss files vs. styles per component</li>
+  <li>Dead-code elimination/Tree shaking</li>
+  <li>One-time string initialization</li>
+  <li>Dependencies between components</li>
+  <li>CSS vs. JS animations</li>
+  <li>Lazy loading</li>
+  <li class="animated fadeInUp tobuild">Throw it away to the backend</li>
+  </ol>
+  </div>
+  </section>
+  <section slide class="slide bg-black-blue" .dark"="">
+  <div class="wrap" wrap="true">
+  <h2>The end</h2>
+  </div>
+  </section>
+      </article>
+  </div>
+      <script src="//cdn.staticfile.org/echarts/4.1.0-release/echarts.min.js"></script>
+  <script>
+      window.pluginsOptions = {}
+  document.addEventListener('DOMContentLoaded', () => {
+      let isPrintMode = false;
+      if(~location.search.indexOf('print-pdf')){
+          isPrintMode = true;
+          WebSlides.registerPlugin('scroll', function(){});
+      }
+      const ws = new WebSlides({
+          loop: false
+      })
+      window.wsInstance = ws;
+      if(isPrintMode){
+          ws.slides.forEach(s=>s.show())
+      }
+  }, false)
+  </script>
+  <script src="./js/chunk-vendors.js"></script><script src="./js/slide.js"></script></body>
+  </html>
+  
+  - htmlparser.js:244 new HTMLParser
+    [lib]/[nodeppt]/[html-minifier-terser]/src/htmlparser.js:244:13
+  
+  - htmlminifier.js:980 minify
+    [lib]/[nodeppt]/[html-minifier-terser]/src/htmlminifier.js:980:3
+  
+  - htmlminifier.js:1341 Object.exports.minify
+    [lib]/[nodeppt]/[html-minifier-terser]/src/htmlminifier.js:1341:16
+  
+  - index.js:445 HtmlWebpackPlugin.postProcessHtml
+    [lib]/[nodeppt]/[html-webpack-plugin]/index.js:445:41
+  
+  - index.js:274 
+    [lib]/[nodeppt]/[html-webpack-plugin]/index.js:274:25
+  
+</pre>
